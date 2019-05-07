@@ -46,7 +46,7 @@ namespace ti_final_grafos.Data
             //if(tabela == null || colunas == null || dados == null)
             //{
             //    return null;
-            //}
+            //}dfdsafasdf
 
             MySqlCommand mySqlCommand = new MySqlCommand();
 
