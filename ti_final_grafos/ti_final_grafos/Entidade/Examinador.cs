@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ti_final_grafos.Entidade
 {
-    class Examinador : Usuario
+    class Examinador 
     {
         private int matricula;
         private List<Tcc> listaTcc;

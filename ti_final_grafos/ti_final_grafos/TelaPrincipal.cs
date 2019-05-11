@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ti_final_grafos.Data;
+using ti_final_grafos.Entidade;
+using ti_final_grafos.Repositorio;
+using ti_final_grafos.Servico;
 
 namespace ti_final_grafos
 {
@@ -22,9 +25,19 @@ namespace ti_final_grafos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BancoDeDados teste = new BancoDeDados();
+            //AreaPesquisa areaPesquisa = new AreaPesquisa(15, "teste");
+            //AreaPesquisaRepositorio area = new AreaPesquisaRepositorio();
 
-            teste.MontaQueryInsert(null, null, null);
+            //area.cadastraAreaPesquisaArquivo(areaPesquisa);
+
+            //Curso curso = new Curso(2, "filosofia", null);
+            //CursoRepositorio cursoRepositorio = new CursoRepositorio();
+            //cursoRepositorio.cadastraCursoArquivo(curso);
+
+            CursoAreaPesquisaRepositorio cursoTeste = new CursoAreaPesquisaRepositorio();
+            cursoTeste.ligaCursoAreaPesquisa("filosofia", "testes");
+
+            
         }
     }
 }

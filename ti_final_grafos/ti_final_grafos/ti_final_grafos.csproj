@@ -65,6 +65,7 @@
     <Compile Include="Entidade\Aluno.cs" />
     <Compile Include="Entidade\AreaPesquisa.cs" />
     <Compile Include="Entidade\Curso.cs" />
+    <Compile Include="Entidade\Curso_AreaPesquisa.cs" />
     <Compile Include="Entidade\Dissimilaridade.cs" />
     <Compile Include="Entidade\Examinador.cs" />
     <Compile Include="Entidade\Grupo.cs" />
@@ -73,6 +74,8 @@
     <Compile Include="Entidade\Tema.cs" />
     <Compile Include="Entidade\TipoTcc.cs" />
     <Compile Include="Entidade\Usuario.cs" />
+    <Compile Include="Erro\Erro.cs" />
+    <Compile Include="Repositorio\CursoAreaPesquisaRepositorio.cs" />
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

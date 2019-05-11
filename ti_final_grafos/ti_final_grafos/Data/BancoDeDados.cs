@@ -8,17 +8,19 @@ using ti_final_grafos.Entidade;
 
 namespace ti_final_grafos.Data
 {
-    class BancoDeDados
+    public class BancoDeDados
     {
-        private string stringConexao = "server=localhost;port=3306;User Id=root;database=teste; password=881100;SSL Mode=None";
+        private static string stringConexao = "server=localhost;port=3306;User Id=root;database=curso_areapesquisa; password=881100;SSL Mode=None";
 
-        protected static MySqlConnection conexao = new MySqlConnection();
+        private static MySqlConnection conexao = new MySqlConnection();
 
-        protected void AbreConexaoBanco()
+        protected static MySqlCommand comando = new MySqlCommand();
+
+        protected static void AbreConexaoBanco()
         {
             try
             {
-                conexao = new MySqlConnection("server=localhost;port=3306;User Id=root;database=teste; password=881100;SSL Mode=None");
+                conexao = new MySqlConnection(stringConexao);
                 conexao.Open();
             }
             catch (Exception erro)
@@ -28,7 +30,7 @@ namespace ti_final_grafos.Data
             }
         }
 
-        protected void FechaConexaoBanco()
+        protected static void FechaConexaoBanco()
         {
             try
             {
@@ -41,34 +43,34 @@ namespace ti_final_grafos.Data
             }
         }
 
-        public string MontaQueryInsert(string tabela, List<Object> colunas, List<Object> dados)
+        protected static void executaComandoInsert(MySqlCommand comando)
         {
-            //if(tabela == null || colunas == null || dados == null)
-            //{
-            //    return null;
-            //}dfdsafasdf
+            try
+            {
+                comando = new MySqlCommand(comando.CommandText, conexao);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
 
-            MySqlCommand mySqlCommand = new MySqlCommand();
+                string erro = ex.Message;
+            }
+        }
 
-            string colunasParaQuery = "";
+        protected static MySqlDataReader executaComandoSelect(MySqlCommand comando)
+        {
+            MySqlDataReader objetoRetornado = null;
+            try
+            {
+                comando = new MySqlCommand(comando.CommandText, conexao);
+                objetoRetornado = comando.ExecuteReader();
+            }
+            catch (Exception)
+            {
 
-            //colunas.ForEach(delegate (Object objeto));
-
-            string query = "insert into " + tabela + "(" + colunasParaQuery + ")";
-
-            Aluno aluno = new Aluno();
-            aluno.matricula = 3434;
-            aluno.nome = "nada";
-            Object objeto = aluno;
-            List<Object> lista = new List<object>();
-            lista.Add("teste");
-            lista.Add(true);
-
-
-            return "";
-
-
-
+                throw;
+            }
+            return objetoRetornado;
         }
 
         public void teste()

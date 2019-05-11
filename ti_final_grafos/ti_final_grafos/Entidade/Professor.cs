@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ti_final_grafos.Entidade
 {
-    class Professor : Usuario
+    class Professor
     {
         private int matricula;
         private AreaPesquisa areaPesquisa;

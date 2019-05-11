@@ -6,7 +6,18 @@ namespace ti_final_grafos.Entidade
 {
     class Aluno : Usuario
     {
-        public int matricula;
-        public string nome;
+        private int matricula;
+
+        public int Matricula { get => matricula; set => matricula = value; }
+
+        public Aluno(int matricula, DateTime data_nascimento, string nome):base(nome, data_nascimento)
+        {
+            this.matricula = matricula;
+        }
+
+        public Aluno(int mat)
+        {
+            this.matricula = mat;
+        }
     }
 }
