@@ -72,7 +72,7 @@ namespace ti_final_grafos.Repositorio
 
             CursoAreaPesquisaRepositorio.executaComandoInsert(CursoAreaPesquisaRepositorio.comando);
 
-            CursoAreaPesquisaRepositorio.FechaConexaoBanco();//
+            CursoAreaPesquisaRepositorio.FechaConexaoBanco();//ss
         }
     }
 }
