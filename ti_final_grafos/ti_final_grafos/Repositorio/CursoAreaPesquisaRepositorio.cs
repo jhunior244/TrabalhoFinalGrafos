@@ -54,17 +54,15 @@ namespace ti_final_grafos.Repositorio
 
                 CursoAreaPesquisaRepositorio.FechaConexaoBanco();
             }
-            cadastraCursoAreaPesquisa(idAreaPesquisa, idCurso);
+
+            if (idCurso != null && idAreaPesquisa != null)
+            {
+                cadastraCursoAreaPesquisa(idAreaPesquisa, idCurso);
+            }
         }
 
         private void cadastraCursoAreaPesquisa(string idAreaPesquisa, string idCurso)
         {
-
-            if (idAreaPesquisa == null || idAreaPesquisa == null)
-            {
-                throw new Exception("Os valores estão incorretos. Verifique e tente novamente.");
-            }
-
             CursoAreaPesquisaRepositorio.AbreConexaoBanco();
 
             CursoAreaPesquisaRepositorio.comando.CommandText = "insert into curso_area_pesquisa (id_curso, id_area_pesquisa) " +
@@ -72,7 +70,7 @@ namespace ti_final_grafos.Repositorio
 
             CursoAreaPesquisaRepositorio.executaComandoInsert(CursoAreaPesquisaRepositorio.comando);
 
-            CursoAreaPesquisaRepositorio.FechaConexaoBanco();//ss
+            CursoAreaPesquisaRepositorio.FechaConexaoBanco();
         }
     }
 }

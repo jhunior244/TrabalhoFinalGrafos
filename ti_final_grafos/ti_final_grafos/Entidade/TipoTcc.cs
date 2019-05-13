@@ -8,5 +8,11 @@ namespace ti_final_grafos.Entidade
     {
         private int id_tipo_tcc;
         private string nome;
+        
+        public TipoTcc(int id_tipo_tcc, string nome)
+        {
+            this.id_tipo_tcc = id_tipo_tcc;
+            this.nome = nome;
+        }
     }
 }

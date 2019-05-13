@@ -14,7 +14,24 @@ namespace ti_final_grafos.Repositorio
 
         private BancoDeDados banco = new BancoDeDados();
 
-        public void cadastraAlunoArquivo(Aluno aluno)
+        public void cadastraAluno(int matricula)
+        {
+            if(matricula < 1)
+            {
+                throw new Exception("É necessário informar a matricula do aluno");
+            }
+
+            AlunoRepositorio.AbreConexaoBanco();
+
+            AlunoRepositorio.comando.CommandText = "insert into aluno (matricula) " +
+                "values ('" + matricula + "')";
+
+            AlunoRepositorio.executaComandoInsert(AlunoRepositorio.comando);
+
+            AlunoRepositorio.FechaConexaoBanco();
+        }
+
+        public void cadastraAluno(Aluno aluno)
         {
             //metodo feito para 
             if(aluno.Matricula < 1)

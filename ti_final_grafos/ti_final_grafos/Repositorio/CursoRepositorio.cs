@@ -10,7 +10,7 @@ namespace ti_final_grafos.Repositorio
     {
         private BancoDeDados banco = new BancoDeDados();
 
-        public void cadastraCursoArquivo(Curso curso)
+        public void cadastraCurso(Curso curso)
         {
             //metodo feito para 
             if (curso.Id_curso < 1)

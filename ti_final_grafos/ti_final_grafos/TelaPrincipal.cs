@@ -25,19 +25,8 @@ namespace ti_final_grafos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //AreaPesquisa areaPesquisa = new AreaPesquisa(15, "teste");
-            //AreaPesquisaRepositorio area = new AreaPesquisaRepositorio();
-
-            //area.cadastraAreaPesquisaArquivo(areaPesquisa);
-
-            //Curso curso = new Curso(2, "filosofia", null);
-            //CursoRepositorio cursoRepositorio = new CursoRepositorio();
-            //cursoRepositorio.cadastraCursoArquivo(curso);
-
             CursoAreaPesquisaRepositorio cursoTeste = new CursoAreaPesquisaRepositorio();
             cursoTeste.ligaCursoAreaPesquisa("filosofia", "testes");
-
-            
         }
     }
 }
