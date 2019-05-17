@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using ti_final_grafos.Entidade;
+using ti_final_grafos.Cluster;
 
 namespace ti_final_grafos
 {
@@ -11,24 +13,48 @@ namespace ti_final_grafos
         {
             string linha = streamReader.ReadLine();
             string[] dados = linha.Split(';');
-            int[,] matrizDissimilaridade = new int[dados.Length, dados.Length];
+
+            Dissimilaridade[,] matrizDissimilaridade = new Dissimilaridade[dados.Length, dados.Length];
+
+            AreaPesquisa[] vetorAreaPesquisa = new AreaPesquisa[dados.Length];
+
+            criaVetorDissimilaridade(vetorAreaPesquisa);
+
             int limiteDoFor = dados.Length;
             int linhaMatriz = 0;
-            while (!streamReader.EndOfStream)
+            int colunaMatriz = 0;
+            while (linha != null)
             {
-
-                gravaDadosMatriz(linhaMatriz, matrizDissimilaridade, dados);
+                gravaDadosMatriz(colunaMatriz, linhaMatriz, vetorAreaPesquisa, matrizDissimilaridade, dados);
                 linha = streamReader.ReadLine();
-                dados = linha.Split(';');
-                linhaMatriz++;
+
+                if (linha != null)
+                {
+                    dados = linha.Split(';');
+                    linhaMatriz++;
+                    colunaMatriz++;
+                }
             }
-            
+            GeradorCluster cluster = new GeradorCluster();
+            cluster.setaCluster(matrizDissimilaridade);
         }
-        private void gravaDadosMatriz(int linha, int[,] matrizDissimilaridade, string[] dados)
+        private void criaVetorDissimilaridade(AreaPesquisa[] vetor)
         {
-            for (int coluna = 0; coluna < dados.Length; coluna++)
+            for (int i = 0; i < vetor.Length; i++)
             {
-                matrizDissimilaridade[linha, coluna] = int.Parse(dados[coluna]);
+                AreaPesquisa areaPesquisa = new AreaPesquisa(i + 1);
+                vetor[i] = areaPesquisa;
+            }
+        }
+        private void gravaDadosMatriz(int colunaMatriz, int linha, AreaPesquisa[] vetorAreaPesquisa, Dissimilaridade[,] matrizDissimilaridade, string[] dados)
+        {
+            int indiceDados = 0;
+            for (int i = 0; i < dados.Length; i++)
+            {
+                Dissimilaridade dissimilaridade = new Dissimilaridade(vetorAreaPesquisa[linha], vetorAreaPesquisa[colunaMatriz], int.Parse(dados[indiceDados]));
+                matrizDissimilaridade[linha, colunaMatriz] = dissimilaridade;
+                indiceDados++;
+                colunaMatriz++;
             }
         }
     }

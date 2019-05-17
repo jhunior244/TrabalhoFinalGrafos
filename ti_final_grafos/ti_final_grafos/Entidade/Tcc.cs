@@ -18,7 +18,7 @@ namespace ti_final_grafos.Entidade
             this.id_tcc = id_tcc;
             this.versao_tcc = versao_tcc;
             this.tipoTcc = tipo;
-            this.tema = tema;//ftytysdsd
+            this.tema = tema;
         }
     }
 }

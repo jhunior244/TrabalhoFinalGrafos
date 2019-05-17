@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cluster\Cluster.cs" />
     <Compile Include="Controlador\AlunoControlador.cs" />
     <Compile Include="Controlador\AreaPesquisaControlador.cs" />
     <Compile Include="Controlador\CursoControlador.cs" />

@@ -13,19 +13,19 @@ namespace ti_final_grafos.Repositorio
         public void cadastraCurso(Examinador examinador)
         {
             //metodo feito para 
-            if (examinador < 1)
+            if (examinador.Matricula < 1)
             {
                 throw new Exception("É necessário informar a id do curso");
             }
 
-            CursoRepositorio.AbreConexaoBanco();
+            ExaminadorRepositorio.AbreConexaoBanco();
 
-            CursoRepositorio.comando.CommandText = "insert into curso (nome, id_curso, departamento) " +
-                "values ('" + curso.Nome + "', '" + curso.Id_curso + "', '" + curso.Departamento + "')";
+            ExaminadorRepositorio.comando.CommandText = "insert into matricula (nome, matricula, departamento) " +
+                "values ('" + examinador.Nome + "', '" + examinador.Matricula + "', '" + examinador.Data_nascimento.ToString("yyyy-MM-dd") + "')";
 
-            CursoRepositorio.executaComandoInsert(CursoRepositorio.comando);
+            ExaminadorRepositorio.executaComandoInsert(ExaminadorRepositorio.comando);
 
-            CursoRepositorio.FechaConexaoBanco();
+            ExaminadorRepositorio.FechaConexaoBanco();
         }
     }
 }

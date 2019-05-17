@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,11 @@ namespace ti_final_grafos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CursoAreaPesquisaRepositorio cursoTeste = new CursoAreaPesquisaRepositorio();
-            cursoTeste.ligaCursoAreaPesquisa("filosofia", "testes");
+            StreamReader streamReader = new StreamReader(@"matrizDissimilaridade.txt");
+            LeituraArquivo leitura = new LeituraArquivo();
+            leitura.lerMatrizDissimilaridade(streamReader);
+            //CursoAreaPesquisaRepositorio cursoTeste = new CursoAreaPesquisaRepositorio();
+            //cursoTeste.ligaCursoAreaPesquisa("filosofia", "testes");
         }
     }
 }
