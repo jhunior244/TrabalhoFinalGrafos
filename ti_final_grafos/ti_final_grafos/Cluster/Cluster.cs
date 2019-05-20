@@ -99,7 +99,7 @@ namespace ti_final_grafos.Cluster
                 }
                 else
                 {
-                    ultimoPaiEncontrado = ultimoPaiEncontrado.clusterFilho;
+                    ultimoPaiEncontrado = ultimoPaiEncontrado.clusterFilho;/////
                 }
             }
             return ultimoPaiEncontrado;
