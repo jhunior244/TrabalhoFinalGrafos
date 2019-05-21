@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ti_final_grafos.Entidade
 {
-    class Dissimilaridade
+    public class Dissimilaridade
     {
         private int id_dissimilaridade;
         private AreaPesquisa areaPesquisa;

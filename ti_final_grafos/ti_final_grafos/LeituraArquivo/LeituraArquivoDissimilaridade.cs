@@ -7,9 +7,9 @@ using ti_final_grafos.Cluster;
 
 namespace ti_final_grafos
 {
-    class LeituraArquivo
+    class LeituraArquivoDissimilaridade
     {
-        public void lerMatrizDissimilaridade(StreamReader streamReader)
+        public Dissimilaridade[,] setaMatrizDissimilaridade(StreamReader streamReader)
         {
             string linha = streamReader.ReadLine();
             string[] dados = linha.Split(';');
@@ -35,8 +35,7 @@ namespace ti_final_grafos
                     colunaMatriz++;
                 }
             }
-            GeradorCluster cluster = new GeradorCluster();
-            cluster.setaCluster(matrizDissimilaridade);
+            return matrizDissimilaridade;
         }
         private void criaVetorDissimilaridade(AreaPesquisa[] vetor)
         {

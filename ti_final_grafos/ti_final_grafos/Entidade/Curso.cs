@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ti_final_grafos.Entidade
 {
-    class Curso
+    public class Curso
     {
         private int id_curso;
 

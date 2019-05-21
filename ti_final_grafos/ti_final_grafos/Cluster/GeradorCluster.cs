@@ -7,7 +7,7 @@ using ti_final_grafos.Entidade;
 
 namespace ti_final_grafos.Cluster
 {
-    class GeradorCluster
+    public class GeradorCluster
     {
         public List<AreaPesquisa> listaAreaPesquisa = new List<AreaPesquisa>();
         public GeradorCluster[] vetorCluster;
@@ -29,12 +29,11 @@ namespace ti_final_grafos.Cluster
 
             for (int i = 0; i < dimensaoMatriz; i++)
             {
-
+                //percorre a matriz de dissimilaridade criando uma matriz de cluster, onde cada posição agora poderá ter uma lista de areas de pesquisa
                 for (int j = 0; j < dimensaoMatriz; j++)
                 {
                     if (matrizDissimilaridade[i, j] != null)
                     {
-
                         GeradorCluster cluster = new GeradorCluster();
                         if (matrizDissimilaridade[i, j].AreaPesquisa.Equals(matrizDissimilaridade[i, j].AreaPesquisaCorrespondente))
                         {

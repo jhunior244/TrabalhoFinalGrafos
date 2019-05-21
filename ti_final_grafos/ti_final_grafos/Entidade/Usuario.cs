@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ti_final_grafos.Entidade
 {
-    class Usuario
+    public class Usuario
     {
         private string nome;
         private DateTime data_nascimento;

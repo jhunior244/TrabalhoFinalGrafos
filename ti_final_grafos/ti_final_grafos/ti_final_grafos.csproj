@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cluster\Cluster.cs" />
+    <Compile Include="Cluster\GeradorCluster.cs" />
     <Compile Include="Controlador\AlunoControlador.cs" />
     <Compile Include="Controlador\AreaPesquisaControlador.cs" />
     <Compile Include="Controlador\CursoControlador.cs" />
@@ -76,6 +76,13 @@
     <Compile Include="Entidade\TipoTcc.cs" />
     <Compile Include="Entidade\Usuario.cs" />
     <Compile Include="Erro\Erro.cs" />
+    <Compile Include="Grupo\TelaGerenciaGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupo\TelaGerenciaGrupo.Designer.cs">
+      <DependentUpon>TelaGerenciaGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeituraArquivo\LeituraArquivoAluno.cs" />
     <Compile Include="Repositorio\CursoAreaPesquisaRepositorio.cs" />
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
@@ -83,7 +90,7 @@
     <Compile Include="TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="LeituraArquivo\LeituraArquivo.cs" />
+    <Compile Include="LeituraArquivo\LeituraArquivoDissimilaridade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\AlunoRepositorio.cs" />
@@ -108,6 +115,15 @@
     <Compile Include="Servico\TemaServico.cs" />
     <Compile Include="Servico\TipoTccServico.cs" />
     <Compile Include="Servico\UsuarioServico.cs" />
+    <Compile Include="ViewCadastro\CadastroAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCadastro\CadastroAluno.Designer.cs">
+      <DependentUpon>CadastroAluno.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Grupo\TelaGerenciaGrupo.resx">
+      <DependentUpon>TelaGerenciaGrupo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewCadastro\CadastroAluno.resx">
+      <DependentUpon>CadastroAluno.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

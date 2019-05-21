@@ -10,7 +10,7 @@ namespace ti_final_grafos.Data
 {
     public class BancoDeDados
     {
-        private static string stringConexao = "server=localhost;port=3306;User Id=root;database=curso_areapesquisa; password=881100;SSL Mode=None";
+        private static string stringConexao = "server=localhost;port=3306;User Id=root;database=ti_final; password=881100;SSL Mode=None";
 
         private static MySqlConnection conexao = new MySqlConnection();
 

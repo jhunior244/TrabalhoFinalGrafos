@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ti_final_grafos.Entidade
 {
-    class Curso_AreaPesquisa
+    public class Curso_AreaPesquisa
     {
         private Curso curso;
 

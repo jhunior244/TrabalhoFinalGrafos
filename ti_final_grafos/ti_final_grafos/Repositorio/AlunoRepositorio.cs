@@ -33,16 +33,10 @@ namespace ti_final_grafos.Repositorio
 
         public void cadastraAluno(Aluno aluno)
         {
-            //metodo feito para 
-            if(aluno.Matricula < 1)
-            {
-                throw new Exception("É necessário informar a matricula do aluno");
-            }
-
             AlunoRepositorio.AbreConexaoBanco();
-
-            AlunoRepositorio.comando.CommandText = "insert into aluno (nome, matricula, data_nascimento) " +
-                "values ('" + aluno.Nome + "', '" + aluno.Matricula + "', '" + aluno.Data_nascimento.ToString("yyyy-MM-dd") + "')";
+           
+            AlunoRepositorio.comando.CommandText = "insert into aluno (nome, data_nascimento) " +
+                "values '" + aluno.Nome + "', '" + aluno.Data_nascimento.ToString("yyyy-MM-dd") + "')";
 
             AlunoRepositorio.executaComandoInsert(AlunoRepositorio.comando);
 
