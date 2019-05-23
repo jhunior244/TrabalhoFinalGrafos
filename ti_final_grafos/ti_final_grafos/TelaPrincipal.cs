@@ -31,7 +31,8 @@ namespace ti_final_grafos
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            CursoRepositorio cursoRepositorio = new CursoRepositorio();
+            cursoRepositorio.buscaCurso();
         }
 
         private void novoAlunoToolStripMenuItem_Click(object sender, EventArgs e)

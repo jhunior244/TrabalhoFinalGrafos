@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ti_final_grafos.Data;
 using ti_final_grafos.Entidade;
+using MySql.Data.MySqlClient;
 
 namespace ti_final_grafos.Repositorio
 {
@@ -13,7 +14,7 @@ namespace ti_final_grafos.Repositorio
         public void cadastraCurso(Curso curso)
         {
             //metodo feito para 
-            if (curso.Id_curso < 1)
+            if (curso.Id_curso == null)
             {
                 throw new Exception("É necessário informar a id do curso");
             }
@@ -26,6 +27,38 @@ namespace ti_final_grafos.Repositorio
             CursoRepositorio.executaComandoInsert(CursoRepositorio.comando);
 
             CursoRepositorio.FechaConexaoBanco();
+        }
+
+        public List<Curso> buscaCurso()
+        {
+            List<Curso> listaCurso = new List<Curso>();
+
+            CursoRepositorio.AbreConexaoBanco();
+
+            CursoRepositorio.comando.CommandText = "select * from curso";
+
+            MySqlDataReader dadosRetornados = CursoRepositorio.executaComandoSelect(CursoRepositorio.comando);
+
+            if (dadosRetornados.HasRows)
+            {
+                while (dadosRetornados.Read())
+                {
+                    Curso curso;
+
+                    string id = dadosRetornados["id_curso"].ToString();
+
+                    string nomeCurso = dadosRetornados["nome"].ToString();
+
+                    string departamento = dadosRetornados["departamento"].ToString();
+
+                    curso = new Curso(id, nomeCurso, departamento);
+
+                    listaCurso.Add(curso);
+
+                }
+                dadosRetornados.Close();
+            }
+            return listaCurso;
         }
     }
 }

@@ -69,7 +69,7 @@
     <Compile Include="Entidade\Curso_AreaPesquisa.cs" />
     <Compile Include="Entidade\Dissimilaridade.cs" />
     <Compile Include="Entidade\Examinador.cs" />
-    <Compile Include="Entidade\Grupo.cs" />
+    <Compile Include="Entidade\GrupoAluno.cs" />
     <Compile Include="Entidade\Professor.cs" />
     <Compile Include="Entidade\Tcc.cs" />
     <Compile Include="Entidade\Tema.cs" />
