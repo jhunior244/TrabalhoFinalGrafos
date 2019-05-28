@@ -22,7 +22,7 @@ namespace ti_final_grafos.Repositorio
             DissimilaridadeRepositorio.comando.CommandText = "insert into dissimilaridade (id_area_pesquisa, id_curso, id_area_pesquisa_correspondente) " +
                 "values ('" + id_area_pesquisa + "', '" + id_area_pesquisa_correspondente + "')";
 
-            DissimilaridadeRepositorio.executaComandoInsert(DissimilaridadeRepositorio.comando);
+            DissimilaridadeRepositorio.executaComandoInsertDeleteUpdate(DissimilaridadeRepositorio.comando);
 
             DissimilaridadeRepositorio.FechaConexaoBanco();
         }

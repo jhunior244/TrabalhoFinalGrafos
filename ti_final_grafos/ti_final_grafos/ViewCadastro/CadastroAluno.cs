@@ -19,6 +19,7 @@ namespace ti_final_grafos.ViewCadastro
         {
             InitializeComponent();
         }
+        DataGridView dtvInfAlunos;
         AlunoServico alunoServico = new AlunoServico();
         private void btnCadastrarAluno_Click(object sender, EventArgs e)
         {
@@ -29,6 +30,7 @@ namespace ti_final_grafos.ViewCadastro
                 alunoServico.cadastraAluno(aluno);
 
                 MessageBox.Show("Aluno cadastrado com sucesso!");
+                btnBuscarAluno_Click(sender, e);
             }
             else
             {
@@ -57,21 +59,104 @@ namespace ti_final_grafos.ViewCadastro
 
         private void btnBuscarAluno_Click(object sender, EventArgs e)
         {
-            if ((tbNomeAluno.Text != null && tbNomeAluno.Text != "") || (cbCurso.Text != null && cbCurso.Text != ""))
+            AlunoRepositorio aluno = new AlunoRepositorio();
+            List<Aluno> listaAluno = new List<Aluno>();
+
+            if (cbCurso.Text != null && cbCurso.Text != "" && tbNomeAluno.Text != null && tbNomeAluno.Text != "")
             {
+                listaAluno = aluno.listaAlunoPorNomeECurso((Curso)cbCurso.SelectedItem, tbNomeAluno.Text);
+                montaGridAluno(listaAluno);
+            }
+            else if (cbCurso.Text != null && cbCurso.Text != "")
+            {
+                listaAluno = aluno.listaAlunoPorCurso((Curso)cbCurso.SelectedItem);
+                montaGridAluno(listaAluno);
+            }
+            else if (tbNomeAluno.Text != null && tbNomeAluno.Text != "")
+            {
+                listaAluno = aluno.listaAlunoPorNome(tbNomeAluno.Text);
+                montaGridAluno(listaAluno);
+            }
+        }
+
+        private void montaGridAluno(List<Aluno> lista)
+        {
+            panel1.Controls.Clear();
+
+            dtvInfAlunos = new DataGridView();
+
+            panel1.Controls.Add(dtvInfAlunos);
+
+            dtvInfAlunos.ColumnCount = 4;
+
+            dtvInfAlunos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            dtvInfAlunos.Size = new Size(740, 505);
+
+            dtvInfAlunos.Columns[0].Name = "Matricula";
+            dtvInfAlunos.Columns[0].Width = 80;
+            dtvInfAlunos.Columns[1].Name = "Nome";
+            dtvInfAlunos.Columns[1].Width = 295;
+            dtvInfAlunos.Columns[2].Name = "Data Nascimento";
+            dtvInfAlunos.Columns[2].Width = 110;
+            dtvInfAlunos.Columns[3].Name = "Curso";
+            dtvInfAlunos.Columns[3].Width = 220;
+
+            foreach (Aluno alunoLista in lista)
+            {
+                string[] row = { alunoLista.Matricula.ToString(), alunoLista.Nome, alunoLista.Data_nascimento.ToString("dd-MM-yyyy"), alunoLista.Curso.Nome };
+                dtvInfAlunos.Rows.Add(row);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dtvInfAlunos != null)
+            {
+                DataGridViewSelectedCellCollection selectedCells = dtvInfAlunos.SelectedCells;
+
+                string matricula = selectedCells[0].FormattedValue.ToString();
+
                 AlunoRepositorio aluno = new AlunoRepositorio();
-                List<Aluno> listaAluno = aluno.listaAlunoPorCurso((Curso)cbCurso.SelectedItem);
-
-                dtvInfAlunos.ColumnCount = 3;
-
-                dtvInfAlunos.Columns[0].Name = "Nome";
-                dtvInfAlunos.Columns[1].Name = "Data Nascimento";
-                dtvInfAlunos.Columns[2].Name = "Curso";
-
-                foreach (Aluno alunoLista in listaAluno)
+                if (aluno.excluiAluno(matricula) == 1)
                 {
-                    string[] row = { alunoLista.Nome, alunoLista.Data_nascimento.ToString("dd-MM-yyyy"), alunoLista.Curso.Nome };
-                    dtvInfAlunos.Rows.Add(row);
+                    MessageBox.Show("Aluno excluido com sucesso!");
+                    btnBuscarAluno_Click(sender, e);
+                }
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if(dtvInfAlunos != null)
+            {
+                DataGridViewSelectedCellCollection selectedCells = dtvInfAlunos.SelectedCells;
+
+                string matricula = selectedCells[0].FormattedValue.ToString();
+
+                string nome = selectedCells[1].FormattedValue.ToString();
+
+                string dataNascimento = selectedCells[2].FormattedValue.ToString();
+
+                string curso = selectedCells[3].FormattedValue.ToString();
+
+                CursoRepositorio cursoRepositorio = new CursoRepositorio();
+
+                Curso objCurso = cursoRepositorio.obtemPorNome(curso);
+
+                if(objCurso == null)
+                {
+                    return;
+                }
+
+                Aluno aluno = new Aluno(Convert.ToInt32(matricula), Convert.ToDateTime(dataNascimento), nome, objCurso);
+
+                AlunoRepositorio alunoRepositorio = new AlunoRepositorio();
+
+                if (alunoRepositorio.editaAluno(aluno) == 1)
+                {
+                    MessageBox.Show("Os dados do aluno foram alterados com sucesso!");
+                    btnBuscarAluno_Click(sender, e);
                 }
 
             }

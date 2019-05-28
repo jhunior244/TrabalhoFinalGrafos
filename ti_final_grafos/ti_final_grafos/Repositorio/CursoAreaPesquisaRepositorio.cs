@@ -68,7 +68,7 @@ namespace ti_final_grafos.Repositorio
             CursoAreaPesquisaRepositorio.comando.CommandText = "insert into curso_area_pesquisa (id_curso, id_area_pesquisa) " +
                 "values ('" + idCurso + "', '" + idAreaPesquisa + "')";
 
-            CursoAreaPesquisaRepositorio.executaComandoInsert(CursoAreaPesquisaRepositorio.comando);
+            CursoAreaPesquisaRepositorio.executaComandoInsertDeleteUpdate(CursoAreaPesquisaRepositorio.comando);
 
             CursoAreaPesquisaRepositorio.FechaConexaoBanco();
         }

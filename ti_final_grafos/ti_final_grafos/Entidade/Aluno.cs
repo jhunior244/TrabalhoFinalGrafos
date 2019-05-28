@@ -18,7 +18,13 @@ namespace ti_final_grafos.Entidade
         public int Id_area_pesquisa { get => id_area_pesquisa; set => id_area_pesquisa = value; }
         public Curso Curso { get => curso; set => curso = value; }
 
-        public Aluno(DateTime data_nascimento, string nome, Curso curso):base(nome, data_nascimento)
+        public Aluno(int matricula, DateTime data_nascimento, string nome, Curso curso):base(nome, data_nascimento)
+        {
+            this.matricula = matricula;
+            this.curso = curso;
+        }
+
+        public Aluno( DateTime data_nascimento, string nome, Curso curso) : base(nome, data_nascimento)
         {
             this.curso = curso;
         }

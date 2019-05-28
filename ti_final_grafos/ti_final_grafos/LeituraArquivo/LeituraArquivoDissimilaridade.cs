@@ -12,7 +12,7 @@ namespace ti_final_grafos
         public Dissimilaridade[,] setaMatrizDissimilaridade(StreamReader streamReader)
         {
             string linha = streamReader.ReadLine();
-            string[] dados = linha.Split(';');
+            string[] dados = linha.Split(' ');
 
             Dissimilaridade[,] matrizDissimilaridade = new Dissimilaridade[dados.Length, dados.Length];
 
@@ -30,7 +30,8 @@ namespace ti_final_grafos
 
                 if (linha != null)
                 {
-                    dados = linha.Split(';');
+                    linha = linha.Trim();
+                    dados = linha.Split(' ');
                     linhaMatriz++;
                     colunaMatriz++;
                 }

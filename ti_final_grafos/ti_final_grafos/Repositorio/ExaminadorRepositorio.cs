@@ -23,7 +23,7 @@ namespace ti_final_grafos.Repositorio
             ExaminadorRepositorio.comando.CommandText = "insert into matricula (nome, matricula, departamento) " +
                 "values ('" + examinador.Nome + "', '" + examinador.Matricula + "', '" + examinador.Data_nascimento.ToString("yyyy-MM-dd") + "')";
 
-            ExaminadorRepositorio.executaComandoInsert(ExaminadorRepositorio.comando);
+            ExaminadorRepositorio.executaComandoInsertDeleteUpdate(ExaminadorRepositorio.comando);
 
             ExaminadorRepositorio.FechaConexaoBanco();
         }

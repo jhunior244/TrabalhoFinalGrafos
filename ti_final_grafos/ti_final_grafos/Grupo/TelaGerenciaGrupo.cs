@@ -95,12 +95,6 @@ namespace ti_final_grafos.Grupo
 
                 altura = dtv.Location.Y + dtv.Height + 5;
             }
-
-            //dtv.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            //dtv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            //dtv.ColumnHeadersDefaultCellStyle.Font = new Font(dtv.Font, FontStyle.Bold);
-            //dtv.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
-            
         }
     }
 }

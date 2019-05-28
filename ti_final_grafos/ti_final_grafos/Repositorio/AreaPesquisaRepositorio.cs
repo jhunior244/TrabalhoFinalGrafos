@@ -23,7 +23,7 @@ namespace ti_final_grafos.Repositorio
             AreaPesquisaRepositorio.comando.CommandText = "insert into area_pesquisa (nome, id_area_pesquisa) " +
                 "values ('" + areaPesquisa.Nome + "', '" + areaPesquisa.Id_area_pesquisa + "')";
 
-            AreaPesquisaRepositorio.executaComandoInsert(AlunoRepositorio.comando);
+            AreaPesquisaRepositorio.executaComandoInsertDeleteUpdate(AlunoRepositorio.comando);
 
             AreaPesquisaRepositorio.FechaConexaoBanco();
         }
@@ -41,7 +41,7 @@ namespace ti_final_grafos.Repositorio
             AreaPesquisaRepositorio.comando.CommandText = "insert into area_pesquisa (id_area_pesquisa) " +
                 "values ('" + id_area_pesquisa + "')";
 
-            AreaPesquisaRepositorio.executaComandoInsert(AlunoRepositorio.comando);
+            AreaPesquisaRepositorio.executaComandoInsertDeleteUpdate(AlunoRepositorio.comando);
 
             AreaPesquisaRepositorio.FechaConexaoBanco();
         }

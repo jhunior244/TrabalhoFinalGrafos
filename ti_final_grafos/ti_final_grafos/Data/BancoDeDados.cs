@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using ti_final_grafos.Entidade;
 
@@ -39,22 +40,24 @@ namespace ti_final_grafos.Data
             catch (Exception erro)
             {
                 //tratar futuramente como enviar mensagem de erro para usuario
+                MessageBox.Show("Ocorreu o seguinte erro ao tentar fechar a conexao: " + erro.Message);
                 Console.WriteLine(erro.Message);
             }
         }
 
-        protected static void executaComandoInsert(MySqlCommand comando)
+        protected static int executaComandoInsertDeleteUpdate(MySqlCommand comando)
         {
+            int result = 0;
             try
             {
                 comando = new MySqlCommand(comando.CommandText, conexao);
-                comando.ExecuteNonQuery();
+                result = comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-
-                string erro = ex.Message;
+                MessageBox.Show("Ocorreu o seguinte erro ao executar a ação: " + ex.Message);
             }
+            return result;
         }
 
         protected static MySqlDataReader executaComandoSelect(MySqlCommand comando)
@@ -65,10 +68,10 @@ namespace ti_final_grafos.Data
                 comando = new MySqlCommand(comando.CommandText, conexao);
                 objetoRetornado = comando.ExecuteReader();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show("Ocorreu o seguinte erro ao executar a ação: " + ex.Message);
             }
             return objetoRetornado;
         }
