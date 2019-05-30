@@ -16,6 +16,7 @@ using ti_final_grafos.LeituraArquivo;
 using ti_final_grafos.Repositorio;
 using ti_final_grafos.Servico;
 using ti_final_grafos.ViewCadastro;
+using ti_final_grafos.ViewCrud;
 
 namespace ti_final_grafos
 {
@@ -37,7 +38,7 @@ namespace ti_final_grafos
 
         private void novoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastroAluno cadastroAluno = new CadastroAluno();
+            CrudAluno cadastroAluno = new CrudAluno();
             cadastroAluno.Show();
         }
 
@@ -71,6 +72,12 @@ namespace ti_final_grafos
         {
             TelaGerenciaGrupo telaGerenciaGrupo = new TelaGerenciaGrupo();
             telaGerenciaGrupo.Show();
+        }
+
+        private void novoProfessorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrudProfessor crudProfessor = new CrudProfessor();
+            crudProfessor.Show();
         }
     }
 }

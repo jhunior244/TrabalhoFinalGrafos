@@ -13,11 +13,12 @@ using ti_final_grafos.Servico;
 
 namespace ti_final_grafos.ViewCadastro
 {
-    public partial class CadastroAluno : Form
+    public partial class CrudAluno : Form
     {
-        public CadastroAluno()
+        public CrudAluno()
         {
             InitializeComponent();
+            cbCurso_MouseClick(null, null);
         }
         DataGridView dtvInfAlunos;
         AlunoServico alunoServico = new AlunoServico();

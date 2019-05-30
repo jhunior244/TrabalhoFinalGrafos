@@ -1,6 +1,6 @@
 ﻿namespace ti_final_grafos.ViewCadastro
 {
-    partial class CadastroAluno
+    partial class CrudAluno
     {
         /// <summary>
         /// Required designer variable.
@@ -155,7 +155,7 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // CadastroAluno
+            // CrudAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,7 +172,7 @@
             this.Controls.Add(this.lblAluno);
             this.Controls.Add(this.tbNomeAluno);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "CadastroAluno";
+            this.Name = "CrudAluno";
             this.Text = "Cadastro Aluno";
             this.Load += new System.EventHandler(this.CadastroAluno_Load);
             this.ResumeLayout(false);

@@ -115,11 +115,23 @@
     <Compile Include="Servico\TemaServico.cs" />
     <Compile Include="Servico\TipoTccServico.cs" />
     <Compile Include="Servico\UsuarioServico.cs" />
-    <Compile Include="ViewCadastro\CadastroAluno.cs">
+    <Compile Include="ViewCrud\CrudAluno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCadastro\CadastroAluno.Designer.cs">
-      <DependentUpon>CadastroAluno.cs</DependentUpon>
+    <Compile Include="ViewCrud\CrudAluno.Designer.cs">
+      <DependentUpon>CrudAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCrud\CrudProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCrud\CrudProfessor.Designer.cs">
+      <DependentUpon>CrudProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCrud\FormListaCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCrud\FormListaCurso.Designer.cs">
+      <DependentUpon>FormListaCurso.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Grupo\TelaGerenciaGrupo.resx">
       <DependentUpon>TelaGerenciaGrupo.cs</DependentUpon>
@@ -136,8 +148,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ViewCadastro\CadastroAluno.resx">
-      <DependentUpon>CadastroAluno.cs</DependentUpon>
+    <EmbeddedResource Include="ViewCrud\CrudAluno.resx">
+      <DependentUpon>CrudAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCrud\CrudProfessor.resx">
+      <DependentUpon>CrudProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCrud\FormListaCurso.resx">
+      <DependentUpon>FormListaCurso.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
