@@ -48,6 +48,7 @@ namespace ti_final_grafos.ViewCrud
                 Curso cursoSelecionado = (Curso)item;
                 listaSelecionada.Add(cursoSelecionado);
             }
+            this.Close();
         }
     }
 }

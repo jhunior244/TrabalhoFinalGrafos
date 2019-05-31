@@ -83,6 +83,7 @@
       <DependentUpon>TelaGerenciaGrupo.cs</DependentUpon>
     </Compile>
     <Compile Include="LeituraArquivo\LeituraArquivoAluno.cs" />
+    <Compile Include="Repositorio\ProfessorCursoRepositorio.cs" />
     <Compile Include="Repositorio\ProfessorAreaPesquisaRepositorio.cs" />
     <Compile Include="Repositorio\CursoAreaPesquisaRepositorio.cs" />
     <Compile Include="TelaPrincipal.cs">

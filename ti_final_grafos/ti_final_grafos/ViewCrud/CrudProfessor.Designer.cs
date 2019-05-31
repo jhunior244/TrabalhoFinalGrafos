@@ -33,7 +33,7 @@
             this.lblNascimento = new System.Windows.Forms.Label();
             this.dtNascimentoProfessor = new System.Windows.Forms.DateTimePicker();
             this.btnVincularCurso = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVincularAreaPesquisa = new System.Windows.Forms.Button();
             this.btnCadastrarAluno = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -89,16 +89,16 @@
             this.btnVincularCurso.UseVisualStyleBackColor = true;
             this.btnVincularCurso.Click += new System.EventHandler(this.btnVincularCurso_Click);
             // 
-            // button1
+            // btnVincularAreaPesquisa
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(504, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(284, 32);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "VINCULAR AREA PESQUISA";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnVincularAreaPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVincularAreaPesquisa.Location = new System.Drawing.Point(504, 38);
+            this.btnVincularAreaPesquisa.Name = "btnVincularAreaPesquisa";
+            this.btnVincularAreaPesquisa.Size = new System.Drawing.Size(284, 32);
+            this.btnVincularAreaPesquisa.TabIndex = 7;
+            this.btnVincularAreaPesquisa.Text = "VINCULAR AREA PESQUISA";
+            this.btnVincularAreaPesquisa.UseVisualStyleBackColor = true;
+            this.btnVincularAreaPesquisa.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnCadastrarAluno
             // 
@@ -144,6 +144,7 @@
             this.btnBuscarAluno.TabIndex = 17;
             this.btnBuscarAluno.Text = "BUSCAR";
             this.btnBuscarAluno.UseVisualStyleBackColor = false;
+            this.btnBuscarAluno.Click += new System.EventHandler(this.btnBuscarAluno_Click);
             // 
             // panel1
             // 
@@ -163,7 +164,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnBuscarAluno);
             this.Controls.Add(this.btnCadastrarAluno);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVincularAreaPesquisa);
             this.Controls.Add(this.btnVincularCurso);
             this.Controls.Add(this.dtNascimentoProfessor);
             this.Controls.Add(this.lblNascimento);
@@ -183,7 +184,7 @@
         private System.Windows.Forms.Label lblNascimento;
         private System.Windows.Forms.DateTimePicker dtNascimentoProfessor;
         private System.Windows.Forms.Button btnVincularCurso;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVincularAreaPesquisa;
         private System.Windows.Forms.Button btnCadastrarAluno;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button button2;

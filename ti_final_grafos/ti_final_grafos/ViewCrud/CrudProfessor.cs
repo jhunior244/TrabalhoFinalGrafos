@@ -16,6 +16,7 @@ namespace ti_final_grafos.ViewCrud
     {
         FormListaAreaPesquisa formAreaPesquisa = new FormListaAreaPesquisa();
         FormListaCurso formCurso = new FormListaCurso();
+        DataGridView dtvProfessor;
 
         public CrudProfessor()
         {
@@ -40,9 +41,41 @@ namespace ti_final_grafos.ViewCrud
                 ProfessorRepositorio professorRepositorio = new ProfessorRepositorio();
                 string matricula = professorRepositorio.cadastraProfessor(professor);
 
-                ProfessorAreaPesquisaRepositorio repositorio = new ProfessorAreaPesquisaRepositorio();
+                ProfessorAreaPesquisaRepositorio professorAreaPesquisaRepositorio = new ProfessorAreaPesquisaRepositorio();
 
-                repositorio.ligaProfessorAreaPesquisa(matricula, formAreaPesquisa.listaSelecionada);
+                ProfessorCursoRepositorio professorCursoRepositorio = new ProfessorCursoRepositorio();
+
+                professorAreaPesquisaRepositorio.ligaProfessorAreaPesquisa(matricula, formAreaPesquisa.listaSelecionada);
+
+                professorCursoRepositorio.ligaProfessorCurso(matricula, formCurso.listaSelecionada);
+            }
+        }
+
+        private void btnBuscarAluno_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+
+            dtvProfessor = new DataGridView();
+
+            panel1.Controls.Add(dtvProfessor);
+
+            dtvProfessor.ColumnCount = 3;
+
+            dtvProfessor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            dtvProfessor.Size = new Size(740, 505);
+
+            dtvProfessor.Columns[0].Name = "Matricula";
+            dtvProfessor.Columns[0].Width = 80;
+            dtvProfessor.Columns[1].Name = "Nome";
+            dtvProfessor.Columns[1].Width = 295;
+            dtvProfessor.Columns[2].Name = "Data Nascimento";
+            dtvProfessor.Columns[2].Width = 110;
+
+            foreach (Aluno alunoLista in lista)
+            {
+                string[] row = { alunoLista.Matricula.ToString(), alunoLista.Nome, alunoLista.Data_nascimento.ToString("dd-MM-yyyy"), alunoLista.Curso.Nome };
+                dtvInfAlunos.Rows.Add(row);
             }
         }
     }
