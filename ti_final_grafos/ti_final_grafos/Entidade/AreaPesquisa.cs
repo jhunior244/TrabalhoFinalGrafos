@@ -26,5 +26,10 @@ namespace ti_final_grafos.Entidade
         {
             this.id_area_pesquisa = id_area;
         }
+
+        public override string ToString()
+        {
+            return this.nome;
+        }
     }
 }

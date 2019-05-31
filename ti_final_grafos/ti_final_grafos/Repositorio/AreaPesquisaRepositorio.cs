@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using ti_final_grafos.Data;
@@ -44,6 +45,36 @@ namespace ti_final_grafos.Repositorio
             AreaPesquisaRepositorio.executaComandoInsertDeleteUpdate(AlunoRepositorio.comando);
 
             AreaPesquisaRepositorio.FechaConexaoBanco();
+        }
+
+        public List<AreaPesquisa> listaAreaPesquisa()
+        {
+            List<AreaPesquisa> listaAreaPesquisa = new List<AreaPesquisa>();
+
+            AreaPesquisaRepositorio.AbreConexaoBanco();
+
+            AreaPesquisaRepositorio.comando.CommandText = "select * from area_pesquisa";
+
+            MySqlDataReader dadosRetornados = AreaPesquisaRepositorio.executaComandoSelect(AreaPesquisaRepositorio.comando);
+
+            if (dadosRetornados.HasRows)
+            {
+                while (dadosRetornados.Read())
+                {
+                    AreaPesquisa areaPesquisa;
+
+                    string id = dadosRetornados["id_area_pesquisa"].ToString();
+
+                    string nomeCurso = dadosRetornados["nome"].ToString();
+
+                    areaPesquisa = new AreaPesquisa(Convert.ToInt32(id), nomeCurso);
+
+                    listaAreaPesquisa.Add(areaPesquisa);
+
+                }
+                dadosRetornados.Close();
+            }
+            return listaAreaPesquisa;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace ti_final_grafos.Data
 {
     public class BancoDeDados
     {
-        private static string stringConexao = "server=localhost;port=3306;User Id=root;database=ti_final; password=881100;SSL Mode=None";
+        private static string stringConexao = "server=localhost;port=3306;User Id=root;database=bd_ti_final; password=881100;SSL Mode=None";
 
         private static MySqlConnection conexao = new MySqlConnection();
 
@@ -76,47 +76,63 @@ namespace ti_final_grafos.Data
             return objetoRetornado;
         }
 
+        public static string returnPrimaryKeyUltimoDadoCadastrado(MySqlCommand comando)
+        {
+            string retorno = "";
+            try
+            {
+                comando = new MySqlCommand(comando.CommandText, conexao);
+                retorno = comando.ExecuteScalar().ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Ocorreu o seguinte erro ao executar a ação: " + ex.Message);
+            }
+            return retorno;
+        }
+
         public void teste()
         {
             //try
             //{
-            //    MySqlCommand mySqlCommand = new MySqlCommand();
+            ////    MySqlCommand mySqlCommand = new MySqlCommand();
 
-            //    string nome = "google";
-            //    mySqlCommand.CommandText = "INSERT INTO aluno (nome) VALUES( '" + nome + "')";
+            ////    string nome = "google";
+            ////    mySqlCommand.CommandText = "INSERT INTO aluno (nome) VALUES( '" + nome + "')";
 
-            //    mySqlCommand = new MySqlCommand(mySqlCommand.CommandText, objConexao);
-            //    mySqlCommand.ExecuteNonQuery();
+            ////    mySqlCommand = new MySqlCommand(mySqlCommand.CommandText, objConexao);
+            ////    mySqlCommand.ExecuteNonQuery();
 
-            //    mySqlCommand.CommandText = "select @@identity";
-            //    string id_aluno = mySqlCommand.ExecuteScalar().ToString();
+            ////    mySqlCommand.CommandText = "select @@identity";
+            ////    string id_aluno = mySqlCommand.ExecuteScalar().ToString();
 
-            //    mySqlCommand = new MySqlCommand(mySqlCommand.CommandText, objConexao);
-            //    mySqlCommand.ExecuteNonQuery();
+            ////    mySqlCommand = new MySqlCommand(mySqlCommand.CommandText, objConexao);
+            ////    mySqlCommand.ExecuteNonQuery();
 
-            //    nome = "engenharia da computação";
-            //    mySqlCommand.CommandText = "insert into curso (nome) values ('" + nome + "')";
+            ////    nome = "engenharia da computação";
+            ////    mySqlCommand.CommandText = "insert into curso (nome) values ('" + nome + "')";
 
-            //    mySqlCommand = new MySqlCommand(mySqlCommand.CommandText, objConexao);
-            //    mySqlCommand.ExecuteNonQuery();
+            ////    mySqlCommand = new MySqlCommand(mySqlCommand.CommandText, objConexao);
+            ////    mySqlCommand.ExecuteNonQuery();
 
-            //    mySqlCommand.CommandText = "select @@identity";
-            //    string id_curso = mySqlCommand.ExecuteScalar().ToString();
+            ////    mySqlCommand.CommandText = "select @@identity";
+            ////    string id_curso = mySqlCommand.ExecuteScalar().ToString();
 
 
-            //    mySqlCommand.CommandText = "INSERT INTO aluno_has_curso (aluno_idaluno,curso_idcurso) VALUES( '" + id_aluno + "', '" + id_curso + "')";
+            ////    mySqlCommand.CommandText = "INSERT INTO aluno_has_curso (aluno_idaluno,curso_idcurso) VALUES( '" + id_aluno + "', '" + id_curso + "')";
 
-            //    mySqlCommand = new MySqlCommand(mySqlCommand.CommandText, objConexao);
-            //    mySqlCommand.ExecuteNonQuery();
+            ////    mySqlCommand = new MySqlCommand(mySqlCommand.CommandText, objConexao);
+            ////    mySqlCommand.ExecuteNonQuery();
 
-            //    MessageBox.Show("gravou");
-            //    objConexao.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
+            ////    MessageBox.Show("gravou");
+            ////    objConexao.Close();
+            ////}
+            ////catch (Exception ex)
+            ////{
+            ////    MessageBox.Show(ex.Message);
 
-            //}
+            ////}
         }
     }
 }

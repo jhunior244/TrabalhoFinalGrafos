@@ -9,9 +9,9 @@ namespace ti_final_grafos.Entidade
         private int matricula;
         private AreaPesquisa areaPesquisa;
 
-        public Professor(int matricula, DateTime data_nascimento, string nome) : base(nome, data_nascimento)
+        public Professor(DateTime data_nascimento, string nome) : base(nome, data_nascimento)
         {
-            this.matricula = matricula;
+
         }
     }
 }

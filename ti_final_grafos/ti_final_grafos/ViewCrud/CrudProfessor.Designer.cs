@@ -31,7 +31,7 @@
             this.tbProfessor = new System.Windows.Forms.TextBox();
             this.lblProfessor = new System.Windows.Forms.Label();
             this.lblNascimento = new System.Windows.Forms.Label();
-            this.dtNascimentoAluno = new System.Windows.Forms.DateTimePicker();
+            this.dtNascimentoProfessor = new System.Windows.Forms.DateTimePicker();
             this.btnVincularCurso = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCadastrarAluno = new System.Windows.Forms.Button();
@@ -69,14 +69,14 @@
             this.lblNascimento.TabIndex = 2;
             this.lblNascimento.Text = "NASCIMENTO";
             // 
-            // dtNascimentoAluno
+            // dtNascimentoProfessor
             // 
-            this.dtNascimentoAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtNascimentoAluno.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNascimentoAluno.Location = new System.Drawing.Point(154, 40);
-            this.dtNascimentoAluno.Name = "dtNascimentoAluno";
-            this.dtNascimentoAluno.Size = new System.Drawing.Size(125, 29);
-            this.dtNascimentoAluno.TabIndex = 5;
+            this.dtNascimentoProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtNascimentoProfessor.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNascimentoProfessor.Location = new System.Drawing.Point(154, 40);
+            this.dtNascimentoProfessor.Name = "dtNascimentoProfessor";
+            this.dtNascimentoProfessor.Size = new System.Drawing.Size(125, 29);
+            this.dtNascimentoProfessor.TabIndex = 5;
             // 
             // btnVincularCurso
             // 
@@ -98,6 +98,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "VINCULAR AREA PESQUISA";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnCadastrarAluno
             // 
@@ -109,6 +110,7 @@
             this.btnCadastrarAluno.TabIndex = 8;
             this.btnCadastrarAluno.Text = "CADASTRAR";
             this.btnCadastrarAluno.UseVisualStyleBackColor = false;
+            this.btnCadastrarAluno.Click += new System.EventHandler(this.btnCadastrarAluno_Click);
             // 
             // btnSalvar
             // 
@@ -163,7 +165,7 @@
             this.Controls.Add(this.btnCadastrarAluno);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnVincularCurso);
-            this.Controls.Add(this.dtNascimentoAluno);
+            this.Controls.Add(this.dtNascimentoProfessor);
             this.Controls.Add(this.lblNascimento);
             this.Controls.Add(this.lblProfessor);
             this.Controls.Add(this.tbProfessor);
@@ -179,7 +181,7 @@
         private System.Windows.Forms.TextBox tbProfessor;
         private System.Windows.Forms.Label lblProfessor;
         private System.Windows.Forms.Label lblNascimento;
-        private System.Windows.Forms.DateTimePicker dtNascimentoAluno;
+        private System.Windows.Forms.DateTimePicker dtNascimentoProfessor;
         private System.Windows.Forms.Button btnVincularCurso;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCadastrarAluno;
