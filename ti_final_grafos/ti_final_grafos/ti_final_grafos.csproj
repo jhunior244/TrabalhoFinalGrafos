@@ -86,6 +86,7 @@
     <Compile Include="Repositorio\ProfessorCursoRepositorio.cs" />
     <Compile Include="Repositorio\ProfessorAreaPesquisaRepositorio.cs" />
     <Compile Include="Repositorio\CursoAreaPesquisaRepositorio.cs" />
+    <Compile Include="Repositorio\ExaminadorTccRepositorio.cs" />
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +124,12 @@
     <Compile Include="ViewCrud\CrudAluno.Designer.cs">
       <DependentUpon>CrudAluno.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewCrud\CrudExaminador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCrud\CrudExaminador.Designer.cs">
+      <DependentUpon>CrudExaminador.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewCrud\CrudProfessor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +141,12 @@
     </Compile>
     <Compile Include="ViewCrud\FormListaAreaPesquisa.Designer.cs">
       <DependentUpon>FormListaAreaPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCrud\FormListaTcc .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCrud\FormListaTcc .Designer.cs">
+      <DependentUpon>FormListaTcc .cs</DependentUpon>
     </Compile>
     <Compile Include="ViewCrud\FormListaCurso.cs">
       <SubType>Form</SubType>
@@ -159,11 +172,17 @@
     <EmbeddedResource Include="ViewCrud\CrudAluno.resx">
       <DependentUpon>CrudAluno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewCrud\CrudExaminador.resx">
+      <DependentUpon>CrudExaminador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewCrud\CrudProfessor.resx">
       <DependentUpon>CrudProfessor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCrud\FormListaAreaPesquisa.resx">
       <DependentUpon>FormListaAreaPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCrud\FormListaTcc .resx">
+      <DependentUpon>FormListaTcc .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCrud\FormListaCurso.resx">
       <DependentUpon>FormListaCurso.cs</DependentUpon>

@@ -16,5 +16,9 @@ namespace ti_final_grafos.Entidade
         {
             this.matricula = matricula;
         }
+
+        public Examinador(DateTime data_nascimento, string nome) : base(nome, data_nascimento)
+        {
+        }
     }
 }

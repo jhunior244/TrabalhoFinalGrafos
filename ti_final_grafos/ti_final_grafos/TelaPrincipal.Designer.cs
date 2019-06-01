@@ -190,6 +190,7 @@
             this.novoExaminadorToolStripMenuItem.Name = "novoExaminadorToolStripMenuItem";
             this.novoExaminadorToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.novoExaminadorToolStripMenuItem.Text = "Novo Examinador";
+            this.novoExaminadorToolStripMenuItem.Click += new System.EventHandler(this.novoExaminadorToolStripMenuItem_Click);
             // 
             // cadastrarEmUmTCCToolStripMenuItem
             // 

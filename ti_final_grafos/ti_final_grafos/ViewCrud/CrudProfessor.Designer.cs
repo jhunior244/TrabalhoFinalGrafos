@@ -37,7 +37,7 @@
             this.btnCadastrarAluno = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnBuscarAluno = new System.Windows.Forms.Button();
+            this.btnBuscarProfessor = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
@@ -122,6 +122,7 @@
             this.btnSalvar.TabIndex = 19;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // button2
             // 
@@ -133,18 +134,19 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "EXCLUIR";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnBuscarAluno
+            // btnBuscarProfessor
             // 
-            this.btnBuscarAluno.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnBuscarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarAluno.Location = new System.Drawing.Point(254, 76);
-            this.btnBuscarAluno.Name = "btnBuscarAluno";
-            this.btnBuscarAluno.Size = new System.Drawing.Size(134, 35);
-            this.btnBuscarAluno.TabIndex = 17;
-            this.btnBuscarAluno.Text = "BUSCAR";
-            this.btnBuscarAluno.UseVisualStyleBackColor = false;
-            this.btnBuscarAluno.Click += new System.EventHandler(this.btnBuscarAluno_Click);
+            this.btnBuscarProfessor.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBuscarProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarProfessor.Location = new System.Drawing.Point(254, 76);
+            this.btnBuscarProfessor.Name = "btnBuscarProfessor";
+            this.btnBuscarProfessor.Size = new System.Drawing.Size(134, 35);
+            this.btnBuscarProfessor.TabIndex = 17;
+            this.btnBuscarProfessor.Text = "BUSCAR";
+            this.btnBuscarProfessor.UseVisualStyleBackColor = false;
+            this.btnBuscarProfessor.Click += new System.EventHandler(this.btnBuscarProfessor_Click);
             // 
             // panel1
             // 
@@ -162,7 +164,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnBuscarAluno);
+            this.Controls.Add(this.btnBuscarProfessor);
             this.Controls.Add(this.btnCadastrarAluno);
             this.Controls.Add(this.btnVincularAreaPesquisa);
             this.Controls.Add(this.btnVincularCurso);
@@ -188,7 +190,7 @@
         private System.Windows.Forms.Button btnCadastrarAluno;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnBuscarAluno;
+        private System.Windows.Forms.Button btnBuscarProfessor;
         private System.Windows.Forms.Panel panel1;
     }
 }

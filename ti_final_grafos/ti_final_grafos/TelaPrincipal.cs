@@ -79,5 +79,11 @@ namespace ti_final_grafos
             CrudProfessor crudProfessor = new CrudProfessor();
             crudProfessor.Show();
         }
+
+        private void novoExaminadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrudExaminador crudExaminador = new CrudExaminador();
+            crudExaminador.Show();
+        }
     }
 }

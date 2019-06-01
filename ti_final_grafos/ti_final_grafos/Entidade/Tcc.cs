@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ti_final_grafos.Entidade
 {
-    class Tcc
+    public class Tcc
     {
         private int id_tcc;
         private string versao_tcc;
@@ -13,12 +13,18 @@ namespace ti_final_grafos.Entidade
         private double nota;
         private List<Examinador> listaExaminador;
 
-        public Tcc(int id_tcc, string versao_tcc, TipoTcc tipo, Tema tema)
+        public Tcc(int id_tcc, Tema tema)
         {
-            this.id_tcc = id_tcc;
-            this.versao_tcc = versao_tcc;
-            this.tipoTcc = tipo;
-            this.tema = tema;
+            this.Id_tcc = id_tcc;
+            this.Tema = tema;
+        }
+
+        public int Id_tcc { get => id_tcc; set => id_tcc = value; }
+        public Tema Tema { get => tema; set => tema = value; }
+
+        public override string ToString()
+        {
+            return Id_tcc.ToString() + " " + Tema.Titulo_tema;
         }
     }
 }

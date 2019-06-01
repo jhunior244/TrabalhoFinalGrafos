@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ti_final_grafos.Entidade
 {
-    class TipoTcc
+    public class TipoTcc
     {
         private int id_tipo_tcc;
         private string nome;
