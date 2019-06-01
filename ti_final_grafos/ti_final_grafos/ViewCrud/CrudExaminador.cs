@@ -107,6 +107,7 @@ namespace ti_final_grafos.ViewCrud
                 if (examinadorRepositorio.editaExaminador(examinador) == 1)
                 {
                     MessageBox.Show("Os dados do examinador foram alterados com sucesso!");
+                    tbExaminador.Text = nome;
                     btnBuscarExaminador_Click(sender, e);
                 }
             }

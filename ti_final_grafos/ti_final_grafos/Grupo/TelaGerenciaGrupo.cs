@@ -27,33 +27,38 @@ namespace ti_final_grafos.Grupo
                 int tamanhoCorte = Convert.ToInt32(tbTotalProfessor.Text);
                 GeradorCluster clusterAtual = TelaPrincipal.clusterPai;
 
-                while (tamanhoCorte != clusterAtual.vetorCluster.Length)
+                if (clusterAtual.vetorCluster != null)
                 {
-                   
-                    if(clusterAtual.vetorCluster.Length == tamanhoCorte)
+                    while (tamanhoCorte != clusterAtual.vetorCluster.Length)
                     {
-                        geraGrupos(clusterAtual, TelaPrincipal.listaAluno);
-                    }
 
-                    else
-                    {
-                        clusterAtual = clusterAtual.clusterFilho;
+                        if (clusterAtual.vetorCluster.Length == tamanhoCorte)
+                        {
+                            geraGrupos(clusterAtual, TelaPrincipal.listaAluno);
+                        }
+
+                        else
+                        {
+                            clusterAtual = clusterAtual.clusterFilho;
+                        }
                     }
+                    geraGrupos(clusterAtual, TelaPrincipal.listaAluno);
                 }
-                geraGrupos(clusterAtual, TelaPrincipal.listaAluno);
+                else
+                {
+                    MessageBox.Show("Carregue os arquivos necessários e tente novamente.");
+                }
             }
-            
         }
 
         private void geraGrupos(GeradorCluster cluster, List<Aluno> listaAluno)
         {
-            int altura = 8;
             List<GrupoAluno> listaGrupo = new List<GrupoAluno>();
 
             for (int i = 0; i < cluster.vetorCluster.Length; i++)
             {
                 List<AreaPesquisa> areaPesquisas = cluster.vetorCluster[i].listaAreaPesquisa;
-                
+
                 GrupoAluno grupo = new GrupoAluno();
                 grupo.listaAluno = new List<Aluno>();
 
@@ -62,7 +67,7 @@ namespace ti_final_grafos.Grupo
                 {
                     foreach (Aluno aluno in listaAluno)
                     {
-                        if(aluno.Id_area_pesquisa == item.Id_area_pesquisa)
+                        if (aluno.Id_area_pesquisa == item.Id_area_pesquisa)
                         {
                             grupo.listaAluno.Add(aluno);
                         }
@@ -95,6 +100,11 @@ namespace ti_final_grafos.Grupo
 
                 altura = dtv.Location.Y + dtv.Height + 5;
             }
+        }
+
+        private void tbTotalProfessor_Click(object sender, EventArgs e)
+        {
+            tbTotalProfessor.Text = "";
         }
     }
 }

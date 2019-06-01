@@ -34,7 +34,7 @@
             this.dtNascimentoProfessor = new System.Windows.Forms.DateTimePicker();
             this.btnVincularCurso = new System.Windows.Forms.Button();
             this.btnVincularAreaPesquisa = new System.Windows.Forms.Button();
-            this.btnCadastrarAluno = new System.Windows.Forms.Button();
+            this.btnCadastrarProfessor = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnBuscarProfessor = new System.Windows.Forms.Button();
@@ -100,17 +100,17 @@
             this.btnVincularAreaPesquisa.UseVisualStyleBackColor = true;
             this.btnVincularAreaPesquisa.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnCadastrarAluno
+            // btnCadastrarProfessor
             // 
-            this.btnCadastrarAluno.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCadastrarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarAluno.Location = new System.Drawing.Point(16, 73);
-            this.btnCadastrarAluno.Name = "btnCadastrarAluno";
-            this.btnCadastrarAluno.Size = new System.Drawing.Size(148, 35);
-            this.btnCadastrarAluno.TabIndex = 8;
-            this.btnCadastrarAluno.Text = "CADASTRAR";
-            this.btnCadastrarAluno.UseVisualStyleBackColor = false;
-            this.btnCadastrarAluno.Click += new System.EventHandler(this.btnCadastrarAluno_Click);
+            this.btnCadastrarProfessor.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCadastrarProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarProfessor.Location = new System.Drawing.Point(16, 73);
+            this.btnCadastrarProfessor.Name = "btnCadastrarProfessor";
+            this.btnCadastrarProfessor.Size = new System.Drawing.Size(148, 35);
+            this.btnCadastrarProfessor.TabIndex = 8;
+            this.btnCadastrarProfessor.Text = "CADASTRAR";
+            this.btnCadastrarProfessor.UseVisualStyleBackColor = false;
+            this.btnCadastrarProfessor.Click += new System.EventHandler(this.btnCadastrarProfessor_Click);
             // 
             // btnSalvar
             // 
@@ -165,7 +165,7 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnBuscarProfessor);
-            this.Controls.Add(this.btnCadastrarAluno);
+            this.Controls.Add(this.btnCadastrarProfessor);
             this.Controls.Add(this.btnVincularAreaPesquisa);
             this.Controls.Add(this.btnVincularCurso);
             this.Controls.Add(this.dtNascimentoProfessor);
@@ -187,7 +187,7 @@
         private System.Windows.Forms.DateTimePicker dtNascimentoProfessor;
         private System.Windows.Forms.Button btnVincularCurso;
         private System.Windows.Forms.Button btnVincularAreaPesquisa;
-        private System.Windows.Forms.Button btnCadastrarAluno;
+        private System.Windows.Forms.Button btnCadastrarProfessor;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnBuscarProfessor;

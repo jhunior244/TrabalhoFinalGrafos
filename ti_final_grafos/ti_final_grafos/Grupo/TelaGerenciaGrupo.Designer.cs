@@ -52,6 +52,7 @@
             this.tbTotalProfessor.Size = new System.Drawing.Size(245, 31);
             this.tbTotalProfessor.TabIndex = 1;
             this.tbTotalProfessor.Text = "TOTAL PROFESSORES";
+            this.tbTotalProfessor.Click += new System.EventHandler(this.tbTotalProfessor_Click);
             // 
             // panel1
             // 

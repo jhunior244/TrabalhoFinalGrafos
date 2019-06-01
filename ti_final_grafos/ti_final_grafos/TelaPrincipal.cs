@@ -36,24 +36,22 @@ namespace ti_final_grafos
             cursoRepositorio.buscaCurso();
         }
 
-        private void novoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CrudAluno cadastroAluno = new CrudAluno();
-            cadastroAluno.Show();
-        }
-
         private void matrizDissimilaridadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "(*.txt)|*.txt";
             openFile.ShowDialog();
 
-            StreamReader streamReader = new StreamReader(openFile.FileName);
+            if (openFile.FileName != null && openFile.FileName != "")
+            {
+                StreamReader streamReader = new StreamReader(openFile.FileName);
 
-            LeituraArquivoDissimilaridade leituraArquivoDissimilaridade = new LeituraArquivoDissimilaridade();
-            Dissimilaridade[,] matriz = leituraArquivoDissimilaridade.setaMatrizDissimilaridade(streamReader);
-            GeradorCluster gerador = new GeradorCluster();
-            clusterPai = gerador.setaCluster(matriz);
+                LeituraArquivoDissimilaridade leituraArquivoDissimilaridade = new LeituraArquivoDissimilaridade();
+                Dissimilaridade[,] matriz = leituraArquivoDissimilaridade.setaMatrizDissimilaridade(streamReader);
+                GeradorCluster gerador = new GeradorCluster();
+                clusterPai = gerador.setaCluster(matriz);
+            }
+
         }
 
         private void arquivoAlunosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,28 +60,42 @@ namespace ti_final_grafos
             openFile.Filter = "(*.txt)|*.txt";
             openFile.ShowDialog();
 
-            StreamReader streamReader = new StreamReader(openFile.FileName);
+            if (openFile.FileName != null && openFile.FileName != "")
+            {
+                StreamReader streamReader = new StreamReader(openFile.FileName);
 
-            LeituraArquivoAluno leituraArquivoAluno = new LeituraArquivoAluno();
-            listaAluno = leituraArquivoAluno.setaListaAluno(streamReader);
+                LeituraArquivoAluno leituraArquivoAluno = new LeituraArquivoAluno();
+                listaAluno = leituraArquivoAluno.setaListaAluno(streamReader);
+            }
         }
 
-        private void gerarGruposToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gerenciarAluno_Click(object sender, EventArgs e)
         {
-            TelaGerenciaGrupo telaGerenciaGrupo = new TelaGerenciaGrupo();
-            telaGerenciaGrupo.Show();
+            CrudAluno cadastroAluno = new CrudAluno();
+            cadastroAluno.Show();
         }
 
-        private void novoProfessorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gerenciarExaminador_Click(object sender, EventArgs e)
+        {
+            CrudExaminador crudExaminador = new CrudExaminador();
+            crudExaminador.Show();
+        }
+
+        private void gerenciarProfessor_Click(object sender, EventArgs e)
         {
             CrudProfessor crudProfessor = new CrudProfessor();
             crudProfessor.Show();
         }
 
-        private void novoExaminadorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gerenciarGrupos_Click(object sender, EventArgs e)
         {
-            CrudExaminador crudExaminador = new CrudExaminador();
-            crudExaminador.Show();
+            TelaGerenciaGrupo telaGerenciaGrupo = new TelaGerenciaGrupo();
+            telaGerenciaGrupo.Show();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

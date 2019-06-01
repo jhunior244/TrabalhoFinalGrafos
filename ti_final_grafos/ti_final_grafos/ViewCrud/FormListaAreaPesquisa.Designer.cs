@@ -62,7 +62,7 @@
             this.checkAreaPesquisa.Margin = new System.Windows.Forms.Padding(6);
             this.checkAreaPesquisa.Name = "checkAreaPesquisa";
             this.checkAreaPesquisa.ScrollAlwaysVisible = true;
-            this.checkAreaPesquisa.Size = new System.Drawing.Size(327, 319);
+            this.checkAreaPesquisa.Size = new System.Drawing.Size(327, 316);
             this.checkAreaPesquisa.TabIndex = 0;
             // 
             // FormListaAreaPesquisa
@@ -73,7 +73,7 @@
             this.Controls.Add(this.btnAplicar);
             this.Controls.Add(this.panel1);
             this.Name = "FormListaAreaPesquisa";
-            this.Text = "FormAreaPesquisa";
+            this.Text = "Lista de áreas de pesquisa";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

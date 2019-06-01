@@ -121,7 +121,6 @@
             this.cbCurso.Name = "cbCurso";
             this.cbCurso.Size = new System.Drawing.Size(384, 32);
             this.cbCurso.TabIndex = 13;
-            this.cbCurso.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbCurso_MouseClick);
             // 
             // button1
             // 

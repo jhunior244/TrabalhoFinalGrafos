@@ -34,7 +34,7 @@ namespace ti_final_grafos.ViewCrud
             formAreaPesquisa.Show();
         }
 
-        private void btnCadastrarAluno_Click(object sender, EventArgs e)
+        private void btnCadastrarProfessor_Click(object sender, EventArgs e)
         {
             if (tbProfessor.Text != null && tbProfessor.Text != "")
             {
@@ -46,25 +46,25 @@ namespace ti_final_grafos.ViewCrud
 
                 if (matricula != null && matricula != "")
                 {
-                    ProfessorAreaPesquisaRepositorio professorAreaPesquisaRepositorio = new ProfessorAreaPesquisaRepositorio();
+                    if (formAreaPesquisa != null && formAreaPesquisa.listaSelecionada != null && formAreaPesquisa.listaSelecionada.Count > 0)
+                    {
+                        ProfessorAreaPesquisaRepositorio professorAreaPesquisaRepositorio = new ProfessorAreaPesquisaRepositorio();
+                        professorAreaPesquisaRepositorio.ligaProfessorAreaPesquisa(matricula, formAreaPesquisa.listaSelecionada);
+                    }
 
-                    ProfessorCursoRepositorio professorCursoRepositorio = new ProfessorCursoRepositorio();
-
-                    professorAreaPesquisaRepositorio.ligaProfessorAreaPesquisa(matricula, formAreaPesquisa.listaSelecionada);
-
-                    professorCursoRepositorio.ligaProfessorCurso(matricula, formCurso.listaSelecionada);
+                    if (formCurso != null && formCurso.listaSelecionada != null && formCurso.listaSelecionada.Count > 0)
+                    {
+                        ProfessorCursoRepositorio professorCursoRepositorio = new ProfessorCursoRepositorio();
+                        professorCursoRepositorio.ligaProfessorCurso(matricula, formCurso.listaSelecionada);
+                    }
                 }
+                btnBuscarProfessor_Click(null, null);
                 MessageBox.Show("Professor cadastrado com sucesso");
             }
             else
             {
                 MessageBox.Show("Os dados para cadastro de um professor estão incompletos. Por favor preencha todos os campos e tente novamente.");
             }
-        }
-
-        private void btnBuscarAluno_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnBuscarProfessor_Click(object sender, EventArgs e)
@@ -103,7 +103,7 @@ namespace ti_final_grafos.ViewCrud
 
             foreach (Professor professor in lista)
             {
-                string[] row = { professor.Matricula.ToString(), professor.Nome, professor.Data_nascimento.ToString("dd-MM-yyyy")};
+                string[] row = { professor.Matricula.ToString(), professor.Nome, professor.Data_nascimento.ToString("dd-MM-yyyy") };
                 dtvProfessor.Rows.Add(row);
             }
         }
@@ -131,6 +131,10 @@ namespace ti_final_grafos.ViewCrud
             {
                 DataGridViewSelectedCellCollection selectedCells = dtvProfessor.SelectedCells;
 
+                if(selectedCells.Count != 3)
+                {
+                    return;
+                }
                 string matricula = selectedCells[0].FormattedValue.ToString();
 
                 string nome = selectedCells[1].FormattedValue.ToString();
@@ -139,14 +143,32 @@ namespace ti_final_grafos.ViewCrud
 
                 Professor professor = new Professor(Convert.ToInt32(matricula), Convert.ToDateTime(dataNascimento), nome);
 
+                if (matricula != null && matricula != "")
+                {
+                    if (formAreaPesquisa != null && formAreaPesquisa.listaSelecionada != null && formAreaPesquisa.listaSelecionada.Count > 0)
+                    {
+                        ProfessorAreaPesquisaRepositorio professorAreaPesquisaRepositorio = new ProfessorAreaPesquisaRepositorio();
+                        professorAreaPesquisaRepositorio.ligaProfessorAreaPesquisa(matricula, formAreaPesquisa.listaSelecionada);
+                    }
+
+                    if (formCurso != null && formCurso.listaSelecionada != null && formCurso.listaSelecionada.Count > 0)
+                    {
+                        ProfessorCursoRepositorio professorCursoRepositorio = new ProfessorCursoRepositorio();
+                        professorCursoRepositorio.ligaProfessorCurso(matricula, formCurso.listaSelecionada);
+                    }
+                }
+
                 ProfessorRepositorio professorRepositorio = new ProfessorRepositorio();
 
                 if (professorRepositorio.editaProfessor(professor) == 1)
                 {
                     MessageBox.Show("Os dados do professor foram alterados com sucesso!");
-                    btnBuscarAluno_Click(sender, e);
+                    tbProfessor.Text = nome;
+                    btnBuscarProfessor_Click(sender, e);
                 }
             }
         }
+
+
     }
 }

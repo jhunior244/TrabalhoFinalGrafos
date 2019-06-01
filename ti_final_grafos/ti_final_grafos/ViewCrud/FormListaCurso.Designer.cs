@@ -39,7 +39,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.checkCurso);
             this.panel1.Location = new System.Drawing.Point(14, 16);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(344, 331);
             this.panel1.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             this.checkCurso.FormattingEnabled = true;
             this.checkCurso.Location = new System.Drawing.Point(6, 6);
-            this.checkCurso.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.checkCurso.Margin = new System.Windows.Forms.Padding(6);
             this.checkCurso.Name = "checkCurso";
             this.checkCurso.ScrollAlwaysVisible = true;
             this.checkCurso.Size = new System.Drawing.Size(327, 316);
@@ -72,9 +72,9 @@
             this.Controls.Add(this.btnAplicar);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormListaCurso";
-            this.Text = "FormListaCurso";
+            this.Text = "Lista de cursos";
             this.Load += new System.EventHandler(this.FormListaCurso_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

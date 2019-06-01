@@ -18,7 +18,7 @@ namespace ti_final_grafos.ViewCadastro
         public CrudAluno()
         {
             InitializeComponent();
-            cbCurso_MouseClick(null, null);
+            buscaCursos();
         }
         DataGridView dtvInfAlunos;
         AlunoServico alunoServico = new AlunoServico();
@@ -44,7 +44,7 @@ namespace ti_final_grafos.ViewCadastro
 
         }
 
-        private void cbCurso_MouseClick(object sender, MouseEventArgs e)
+        private void buscaCursos()
         {
             if (cbCurso.Items.Count == 0)
             {
@@ -129,7 +129,7 @@ namespace ti_final_grafos.ViewCadastro
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(dtvInfAlunos != null)
+            if (dtvInfAlunos != null)
             {
                 DataGridViewSelectedCellCollection selectedCells = dtvInfAlunos.SelectedCells;
 
@@ -145,7 +145,7 @@ namespace ti_final_grafos.ViewCadastro
 
                 Curso objCurso = cursoRepositorio.obtemPorNome(curso);
 
-                if(objCurso == null)
+                if (objCurso == null)
                 {
                     return;
                 }

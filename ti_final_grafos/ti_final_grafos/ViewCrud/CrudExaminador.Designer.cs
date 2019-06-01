@@ -160,7 +160,7 @@
             this.Controls.Add(this.lblExaminador);
             this.Controls.Add(this.tbExaminador);
             this.Name = "CrudExaminador";
-            this.Text = "CrudProfessor";
+            this.Text = "Crud Examinador";
             this.ResumeLayout(false);
             this.PerformLayout();
 
